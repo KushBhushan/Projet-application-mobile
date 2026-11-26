@@ -1,4 +1,3 @@
-
 package com.example.movieapp.ui.navigation
 
 import androidx.compose.runtime.Composable
@@ -23,14 +22,8 @@ fun AppNavigation() {
         startDestination = MovieAppScreen.Home.name
     ) {
 
-        composable(MovieAppScreen.Home.name) {
-            HomeScreen(
-                onMovieClick = { id ->
-                    navController.navigate(
-                        "${MovieAppScreen.Details.name}/$id"
-                    )
-                }
-            )
+        composable(route = MovieAppScreen.Home.name) {
+            HomeScreen()
         }
 
         composable(MovieAppScreen.Search.name) {
